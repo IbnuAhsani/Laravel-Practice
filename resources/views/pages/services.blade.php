@@ -23,9 +23,8 @@
 			The parameter used is the array of data that is
 			being passed from the Controller
 		 --}}
-    @if(count($services) > 0)
-    
-    	<ul>
+    @if(count($services) > 0)    
+    	<ul class="list-group">
 
     		{{-- 
 					@foreach is a foreach looping, the ending of @foreach
@@ -34,8 +33,8 @@
 					being passed from the Controller
 				--}}
 				@foreach($services as $service)
-
-					<li>{{$service}}</li>
+				
+					<li class="list-group-item">{{$service}}</li>
 				@endforeach
     	</ul>
     @endif
