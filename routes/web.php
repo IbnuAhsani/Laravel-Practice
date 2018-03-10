@@ -33,15 +33,21 @@
 	});
 */
 
-// The base URL now refers to the method 'index'
-//  in the Controller'PagesController' 
+/*
+	The base URL now refers to the method 'index'
+	in the Controller'PagesController' 
+ */
 Route::get('/', 'PagesController@index');
 
-// Adding end-point to the base Controller
-// which redirects the page to whatever is 
-// contained inside the method 'about' in the
-// Controller 'PagesController'
+/* 
+	Adding end-point to the base Controller
+	which redirects the page to whatever is 
+	contained inside the method 'about' in the
+	Controller 'PagesController'
+*/
 Route::get('/about', 'PagesController@about');
 
 // Same thing as above, but with method 'services'
 Route::get('/services', 'PagesController@services');
+
+Route::resource('posts', 'PostsController');
