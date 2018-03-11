@@ -19,7 +19,9 @@
 		{{-- Creating a Text Area to input the Body using the Form Class --}}
   	<div class="form-group">
   			{{Form::label('body', 'Body')}}
-  			{{Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Body Text'])}}
+
+  			{{-- The 'id' is referencing to the id for CKEditor (error) --}}
+  			{{Form::textarea('body', '', [ 'id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
   	</div>  	
 
 		{{-- 

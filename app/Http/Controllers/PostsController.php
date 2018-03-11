@@ -84,6 +84,9 @@ class PostsController extends Controller
         $post->body = $request->input('body');
         $post->save();
 
+        // Redirecting and Posting a 'success' message 
+        // (using the 'message.blade.php' in the 'inc' Folder)
+        // after the Post has been stored
         return redirect('http://localhost/lsapp/public/posts')->with('success', 'Post Created');
     }
 

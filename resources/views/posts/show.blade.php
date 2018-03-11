@@ -11,9 +11,13 @@
 	{{-- Displaying the Posts' title --}}
 	<h1>{{$post->title}}</h1>	
 	
-	{{-- Displaying the Posts's body --}}
+	{{-- 
+		Displaying the Posts's body
+		The !! is for parsing HTML text
+		to normal text
+	--}}
 	<div>
-		{{$post->body}}
+		{!!$post->body!!}
 	</div>
 
 	<hr>

@@ -35,5 +35,18 @@
             @yield('content')
 
         </div>
+
+        {{-- 
+            Adding the CKEditor plugin for the Text Area (error)
+            In order to add this plugin, visit the Dev's Github
+            for instruction on how to install this plugin
+        --}}
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script>
+            // The 'id' to be used if you want to
+            // use the CKEditor
+            CKEDITOR.replace( 'article-ckeditor' );
+        </script>
+
     </body>
 </html>
