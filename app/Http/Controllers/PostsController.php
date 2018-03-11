@@ -42,7 +42,7 @@ class PostsController extends Controller
 
         // Create a pagination for all the data from table 'Posts'
         // and limit the page so that every page only has 10 data
-        $posts = Post::orderBy('title', 'desc')->paginate(10);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         // Fetch all the data from the Post table
         // and ordering them by 'title' and 'ascendingly'
@@ -71,7 +71,20 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // This will validate the data that
+        // was inputed from the $request
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        // Create a Post
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('http://localhost/lsapp/public/posts')->with('success', 'Post Created');
     }
 
     /**

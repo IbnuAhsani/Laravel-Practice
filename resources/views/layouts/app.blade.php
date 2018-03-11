@@ -23,6 +23,8 @@
 
         <div class="container">
 
+            @include('inc.messages')
+
             {{-- 
                 @yield indicates that this part of the .php file
                 is going to be filled with the data that is used in
