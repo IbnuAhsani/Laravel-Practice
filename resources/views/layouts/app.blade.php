@@ -18,7 +18,7 @@
         {{-- 
             @include() will include a portion of code from a different source
             In this case, it will include View 'navbar.blade.php' from Folder 'inc'
-         --}}
+        --}}
         @include('inc.navbar')
 
         <div class="container">

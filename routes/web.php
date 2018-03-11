@@ -50,4 +50,8 @@ Route::get('/about', 'PagesController@about');
 // Same thing as above, but with method 'services'
 Route::get('/services', 'PagesController@services');
 
+/*
+	Load all the methods from the PostsController and add 
+	those as end points touch(filename) baseUrl/posts/...
+ */
 Route::resource('posts', 'PostsController');

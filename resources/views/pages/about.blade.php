@@ -13,8 +13,10 @@
  --}}
 @section('content')
 
-    <!-- Displaying a variable that was 
-    sent from the Controller 'PagesController' -->
+    <!-- 
+	    Displaying a variable that was 
+	    sent from the Controller 'PagesController' 
+	  -->
     <h1><?php echo $title; ?></h1>
     <p>This is the About page</p>
 @endsection
