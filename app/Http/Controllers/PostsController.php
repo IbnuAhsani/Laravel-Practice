@@ -60,6 +60,7 @@ class PostsController extends Controller
      */
     public function create()
     {
+        // Redirect the web page to the 'Create' page
         return view('posts.create');
     }
 
@@ -160,6 +161,13 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Fetching the Post that matches with the $id
+        $post = Post::find($id);
+
+        // Delete the Post that was fetched
+        $post->delete();
+
+        // Redirect the web page once it's been deleted
+        return redirect('http://localhost/lsapp/public/posts')->with('success', 'Post Removed');
     }
 }

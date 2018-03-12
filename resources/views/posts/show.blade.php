@@ -27,9 +27,18 @@
 
 	<hr>
 
-	{{-- 
-		A Link to Edit the Post, the end points
-	 	are based on the routes the we created
-	--}}
+	{{-- A Link to Edit the Post, the end points are based on the routes the we created --}}
 	<a href="http://localhost/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+
+	{{-- Creating a Form --}}
+	{!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+		
+		{{-- Spoofing a 'POST' request to a 'DELETE' request --}}
+		{{Form::hidden('_method', 'DELETE')}}
+
+		{{-- A submit button for the 'DELETE' Form --}}
+		{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+		
+	{{-- Closing tag for the Form --}}
+	{!!Form::close()!!}
 @endsection
