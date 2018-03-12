@@ -55,3 +55,6 @@ Route::get('/services', 'PagesController@services');
 	those as end points touch(filename) baseUrl/posts/...
  */
 Route::resource('posts', 'PostsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
