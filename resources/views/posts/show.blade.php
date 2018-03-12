@@ -24,4 +24,12 @@
 
 	{{-- Displaying when the Post was created --}}
 	<small>Written on {{$post->created_at}}</small>
+
+	<hr>
+
+	{{-- 
+		A Link to Edit the Post, the end points
+	 	are based on the routes the we created
+	--}}
+	<a href="http://localhost/lsapp/public/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
 @endsection

@@ -115,7 +115,12 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // get the Post data that we want to edit
+        $post = Post::find($id);
+
+        // Redirect to the edit page where the data
+        // will fill the otherwise blank text boxes
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -127,7 +132,24 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // This will validate the data that
+        // was inputed from the $request
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        // Replacing the value of the data
+        // of the Post that match with the $id
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        // Redirecting and Posting a 'Post Updated' message 
+        // (using the 'message.blade.php' in the 'inc' Folder)
+        // after the Post has been stored
+        return redirect('http://localhost/lsapp/public/posts')->with('success', 'Post Updated');
     }
 
     /**

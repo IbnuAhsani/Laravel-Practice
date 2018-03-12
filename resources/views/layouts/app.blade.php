@@ -6,10 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!-- Adding Laravel's built-in CSS to the Layout -->
+        {{-- Adding Laravel's built-in CSS to the Layout --}}
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
-        <!-- Getting the application name from .env file, 'APP_NAME' attribute -->
+        {{-- Getting the application name from .env file, 'APP_NAME' attribute --}}
         <title>{{config('app.name'), 'LSAPP'}}</title>
     
     </head>
@@ -43,6 +43,7 @@
         --}}
         <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
         <script>
+            
             // The 'id' to be used if you want to
             // use the CKEditor
             CKEDITOR.replace( 'article-ckeditor' );

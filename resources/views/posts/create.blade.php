@@ -3,11 +3,11 @@
 @section('content')
 	<h1>Create Post</h1>
 
-	<!-- 
+	{{-- 
 		Using Laravel Collective, we're creating a form using the Form Class.
 		In order to do this, we must import the Laravel Collective Providers
 		and Aliases for Form into the confi/app.php
-	-->
+	--}}
 	{!! Form::open(['action' => 'PostsController@store', 'method' => 'POST']) !!}
 
 		{{-- Creating a Text Box to input the Title using the Form Class --}}
