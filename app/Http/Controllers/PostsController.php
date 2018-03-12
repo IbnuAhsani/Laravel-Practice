@@ -83,6 +83,10 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+
+        // Get the 'id' of the person who logged in
+        $post->user_id = auth()->user()->id;
+        
         $post->save();
 
         // Redirecting and Posting a 'success' message 

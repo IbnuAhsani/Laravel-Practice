@@ -13,8 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    
+                    <a href="http://localhost/lsapp/public/posts/create" class="btn btn-primary">Create Post</a>
+                    
+                    <hr>
+                    
+                    <h3>Your Blog Posts</h3>
                 </div>
             </div>
         </div>
