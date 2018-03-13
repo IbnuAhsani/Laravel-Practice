@@ -17,7 +17,7 @@
 						Getting the atribute 'created_at' from
 						the variable $post
 					--}}
-					<small>Written on {{$post->created_at}}</small>
+					<small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
 			</div>
 		@endforeach
 

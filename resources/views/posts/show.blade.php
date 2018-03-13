@@ -23,7 +23,7 @@
 	<hr>
 
 	{{-- Displaying when the Post was created --}}
-	<small>Written on {{$post->created_at}}</small>
+	<small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
 
 	<hr>
 

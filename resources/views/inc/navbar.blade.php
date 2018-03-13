@@ -37,7 +37,7 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="http://localhost/lsapp/public/" class="dropdown-item">Dashboard</a>
+                            <a href="http://localhost/lsapp/public/dashboard" class="dropdown-item">Dashboard</a>
                             
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
