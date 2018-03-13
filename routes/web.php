@@ -55,6 +55,15 @@ Route::get('/services', 'PagesController@services');
 	those as end points touch(filename) baseUrl/posts/...
  */
 Route::resource('posts', 'PostsController');
-Auth::routes();
 
+/*
+	Loading a single method from the 'DashboardController'Controller
+	which is the index() method and setting that endpoint as '.../dashboard'
+ */
 Route::get('/dashboard', 'DashboardController@index');
+
+/*
+	Loading all the routes necessary in 
+	order to enable authentification
+ */
+Auth::routes();

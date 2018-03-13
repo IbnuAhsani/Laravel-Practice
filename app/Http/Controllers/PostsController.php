@@ -19,6 +19,21 @@ use DB;
 class PostsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     *
+     * This construc() method will prevent anyone
+     * who hasn't logged-in to view any pages with
+     * the endpoint of '.../post/...', with the exception
+     * of pages '.../post/index' and '.../post/show'
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -123,6 +138,14 @@ class PostsController extends Controller
         // get the Post data that we want to edit
         $post = Post::find($id);
 
+        // Check for the User who's currently logged-in
+        // if his/her's id is the same as the id of the
+        // User who created the Post
+        if(auth()->user()->id !== $post->user_id)
+            {
+                return redirect('http://localhost/lsapp/public/posts/')->with('error', 'Unauthorized page');
+            }
+
         // Redirect to the edit page where the data
         // will fill the otherwise blank text boxes
         return view('posts.edit')->with('post', $post);
@@ -167,6 +190,14 @@ class PostsController extends Controller
     {
         // Fetching the Post that matches with the $id
         $post = Post::find($id);
+
+        // Check for the User who's currently logged-in
+        // if his/her's id is the same as the id of the
+        // User who created the Post
+        if(auth()->user()->id !== $post->user_id)
+            {
+                return redirect('http://localhost/lsapp/public/posts/')->with('error', 'Unauthorized page');
+            }
 
         // Delete the Post that was fetched
         $post->delete();

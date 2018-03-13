@@ -13,10 +13,7 @@
 					--}}
 					<h3><a href="http://localhost/lsapp/public/posts/{{$post->id}}">{{$post->title}}</a></h3>
 					
-					{{-- 
-						Getting the atribute 'created_at' from
-						the variable $post
-					--}}
+					{{-- Getting the atribute 'created_at' from the variable $post --}}
 					<small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
 			</div>
 		@endforeach

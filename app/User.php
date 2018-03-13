@@ -27,8 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // A function to call when fetching data
+    // from the 'Posts' table that was created
+    // by this User
     public function posts()
         {
+            // Create a 'One-To-Many' Relationship
+            // where 'User' is the 'One'
             return $this->hasMany('App\Post');
         }
 }

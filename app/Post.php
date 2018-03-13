@@ -15,9 +15,12 @@ class Post extends Model
     // Timestamps
     public $timestamps = true;
 
+    // A function to call when fetching data
+    // from the 'Users' table who created this post
     public function user()
     	{
+    		// Create a 'One-To-Many' Relationship
+    		// where 'Post' is the 'Many'
     		return $this->belongsTo('App\User');
     	}
-    
 }
